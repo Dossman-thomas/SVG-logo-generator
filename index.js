@@ -6,7 +6,7 @@ const inquirer = require('inquirer');
 // Import File System(fs)
 const fs = require('fs').promises; // Using fs.promises to make file operations promise-based
 
-// // Import shapes modules
+// Import shapes modules
 const {Triangle, Circle, Square} = require('./lib/shapes');
 
 //------------------------------------------------------
@@ -61,7 +61,7 @@ class Svg {
   setText(shape, text, textColor){
 
     // checks shape and changes text y-coordinate so it fits better
-    
+
     if(shape === "triangle"){
 
       this.textEl = `<text x="150" y="133" font-size="55" text-anchor="middle" fill="${textColor}">${text}</text>`;
