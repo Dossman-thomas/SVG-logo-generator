@@ -58,14 +58,29 @@ class Svg {
     return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">${this.shapeEl}${this.textEl}</svg>`
   }
 
-  setText(text, textColor){
-    this.textEl = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${textColor}">${text}</text>`;
+  setText(shape, text, textColor){
+
+    // checks shape and changes text y-coordinate so it fits better
+    
+    if(shape === "triangle"){
+
+      this.textEl = `<text x="150" y="133" font-size="55" text-anchor="middle" fill="${textColor}">${text}</text>`;
+
+    } else if (shape === "circle"){
+
+      this.textEl = `<text x="150" y="120" font-size="60" text-anchor="middle" fill="${textColor}">${text}</text>`;
+
+    } else {
+
+      this.textEl = `<text x="150" y="140" font-size="60" text-anchor="middle" fill="${textColor}">${text}</text>`;
+
+    }
+    
   }
 
   setShape(shape){
     this.shapeEl = shape.render();
   }
-
 }
 
 //------------------------------------------------------
@@ -112,7 +127,7 @@ async function init() {
 
     const svgFile = new Svg ();
 
-    svgFile.setText(text, data.textColor);
+    svgFile.setText(data.shape, text, data.textColor);
     svgFile.setShape(shapeElement);
 
     const svgContent = svgFile.render();
