@@ -123,7 +123,7 @@ async function init() {
     
     shapeElement.setColor(data.shapeColor); // sets shapeColor based on user input
 
-    console.log(shapeElement);
+    // console.log(shapeElement);
 
     const svgFile = new Svg ();
 
@@ -132,7 +132,7 @@ async function init() {
 
     const svgContent = svgFile.render();
 
-    console.log(svgContent);
+    // console.log(svgContent);
     
 
     // Writes SVG file using fs.promises.writeFile
